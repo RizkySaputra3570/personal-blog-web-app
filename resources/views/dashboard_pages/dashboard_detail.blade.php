@@ -10,7 +10,7 @@
                 </a>
                 @if ($post->post_image)
                 <div style="max-height: 350px; overflow: hidden;">
-                    <img src="{{ asset("/$post->post_image") }}" alt="{{ $post->title }}" class="img-fluid mt-3">
+                    <img src="{{ asset("/storage/$post->post_image") }}" alt="{{ $post->title }}" class="img-fluid mt-3">
                 </div>
                 @else
                 <div style="max-height: 350px; overflow: hidden;">

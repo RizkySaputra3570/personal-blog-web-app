@@ -24,7 +24,7 @@
                                 <div class="col-md-4 mb-3">
                                     <div class="card">
                                         @if ($post->post_image)
-                                        <img src="{{ asset("/$post->post_image") }}" alt="{{ $post->category->name }}" class=" card-img-top img-fluid">
+                                        <img src="{{ asset("/storage/$post->post_image") }}" alt="{{ $post->category->name }}" class=" card-img-top img-fluid">
                                         @else
                                         <img src="{{ asset('/storage/images/no_image.png') }}" alt="No Image Available" class="card-img-top">
                                         @endif       

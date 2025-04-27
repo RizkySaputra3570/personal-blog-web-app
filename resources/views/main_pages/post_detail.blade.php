@@ -15,7 +15,7 @@
                 </p>  
                 @if ($post->post_image)
                 <div style="max-height: 250px; overflow: hidden;">
-                    <img src="{{ asset("/$post->post_image") }}" alt="{{ $post->title }}" class="img-fluid mt-3">
+                    <img src="{{ asset("/storage/$post->post_image") }}" alt="{{ $post->title }}" class="img-fluid mt-3">
                 </div>
                 @else
                 <img src="{{ asset('/storage/images/no_image.png') }}" alt="No Image Available" class="img-fluid">
