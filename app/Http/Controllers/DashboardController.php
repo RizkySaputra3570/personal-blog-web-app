@@ -45,7 +45,7 @@ class DashboardController extends Controller
         ]);
 
         if ($request->file('post_image')) {
-            $validatedData['post_image'] = $request->file('post_image')->store('storage/images', 'public');
+            $validatedData['post_image'] = $request->file('post_image')->store('images');
         }
 
         $validatedData['user_id'] = auth()->user()->id;
@@ -97,10 +97,10 @@ class DashboardController extends Controller
 
         if ($request->file('post_image')) {
             if ($request->oldImage) {
-                Storage::delete("/storage/images/$request->oldImage");
+                Storage::delete($request->oldImage);
             }
 
-            $validatedData['post_image'] = $request->file('post_image')->store('storage/images', 'public');
+            $validatedData['post_image'] = $request->file('post_image')->store('images');
         }
 
         $validatedData['user_id'] = auth()->user()->id;
@@ -116,7 +116,7 @@ class DashboardController extends Controller
     public function destroy(Post $post)
     {
         if ($post->post_image) {
-            Storage::delete("/storage/images/$post->post_image");
+            Storage::delete($post->post_image);
         }
 
         $post::where('id', $post->id)->delete();        
